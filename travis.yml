@@ -1,10 +1,13 @@
+# Set the build language to Python
 language: python
 
-python:
-  - "3.6"
+# Set the python version to 2.7
+python: 3.6
 
+# Install the codecov pip dependency
 install:
   - pip install -r requirements.txt
 
+# Run the unit test
 script:
-  - python ./script/script.py 
+  - python ./script/script.py
