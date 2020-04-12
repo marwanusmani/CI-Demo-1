@@ -2,20 +2,20 @@ import os
 
 #import script
 importFile = '../import/_import.py'
-importFileResult = './import.txt'
+importFileResult = './script/import.txt'
 
 #GitDeployment script
 gitDeploymentFile = '../GithubDeployment/_githubDeployment.py'
-gitDeploymentResult = './gitDeployment.txt'
+gitDeploymentResult = './script/gitDeployment.txt'
 
 #packagePublishing script
 packagePublishing = '../PackagePublishing/_publishPackages.py'
-packagePublishingResult = './packagePublish.txt'
+packagePublishingResult = './script/packagePublish.txt'
 
 #portal scripts
 updatePortalSettings = '../UpdatePortal/_updatePortalSettings.py'
 updatePortal = '../UpdatePortal/_updatePortal.py'
-updatePortalResults = './portal.txt'
+updatePortalResults = './script/portal.txt'
 
 # run import script
 try:
