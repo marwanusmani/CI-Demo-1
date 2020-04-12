@@ -1,0 +1,396 @@
+{
+  "Name": "APIMATIC Calculator",
+  "BaseUri": "http://examples.apimatic.io/apps/calculator",
+  "ServerConfiguration": {
+    "DefaultEnvironment": "production",
+    "DefaultServer": "default",
+    "Environments": [
+      {
+        "Name": "production",
+        "Servers": [
+          {
+            "Name": "default",
+            "Url": "http://examples.apimatic.io/apps/calculator"
+          }
+        ]
+      }
+    ],
+    "Parameters": []
+  },
+  "ImageUri": "https://apimatic.io/img/example-apps/Calculator.svg",
+  "Description": "Simple calculator API hosted on APIMATIC",
+  "Version": "1.0",
+  "Contact": {},
+  "AdditionalHeaders": [],
+  "Authentication": {
+    "Type": "None",
+    "AuthType": "None",
+    "Parameters": [],
+    "AuthorizationUrl": "",
+    "AccessTokenUrl": "",
+    "OAuth2Server": "",
+    "OAuth2AuthorizationServer": "",
+    "AuthGrantTypes": [],
+    "AuthScopes": [],
+    "Scopes": [],
+    "ParamFormats": {}
+  },
+  "Endpoints": [
+    {
+      "Name": "Calculate DevOps Stamford",
+      "Description": "Calculates the expression using the specified operation..",
+      "HTTPMethod": "GET",
+      "Group": "Calculator DevOps Conf",
+      "RequiresAuthentication": true,
+      "Route": "/{operation}",
+      "Response": {
+        "Optional": false,
+        "Type": "Precision",
+        "Constant": false,
+        "IsStream": false,
+        "IsAttribute": false,
+        "Attributes": {
+          "ExclusiveMaximum": false,
+          "ExclusiveMinimum": false
+        },
+        "Nullable": false,
+        "IsArray": false,
+        "IsMap": false,
+        "Deprecated": false,
+        "Name": "response"
+      },
+      "HasOptionalQueryParams": false,
+      "HasOptionalFieldParams": false,
+      "CollectParameters": false,
+      "RequiredScopes": [],
+      "Parameters": [
+        {
+          "ParamFormat": "Template",
+          "Optional": false,
+          "Type": "Operation Type",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Deprecated": false,
+          "Name": "operation",
+          "Description": "The operator to apply on the variables",
+          "DefaultValue": ""
+        },
+        {
+          "ParamFormat": "Query",
+          "Optional": false,
+          "Type": "Precision",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {
+            "ExclusiveMaximum": false,
+            "ExclusiveMinimum": false
+          },
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Deprecated": false,
+          "Name": "x",
+          "Description": "The LHS value",
+          "DefaultValue": ""
+        },
+        {
+          "ParamFormat": "Query",
+          "Optional": false,
+          "Type": "Precision",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {
+            "ExclusiveMaximum": false,
+            "ExclusiveMinimum": false
+          },
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Deprecated": false,
+          "Name": "y",
+          "Description": "The RHS value",
+          "DefaultValue": ""
+        }
+      ],
+      "Errors": [],
+      "TestCases": [
+        {
+          "Name": "Divide",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "operation",
+              "Value": "DIVIDE"
+            },
+            {
+              "IsNull": false,
+              "Name": "x",
+              "Value": "20"
+            },
+            {
+              "IsNull": false,
+              "Name": "y",
+              "Value": "4"
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBody": "5",
+          "ExpectedBodyMatchMode": "NATIVE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        },
+        {
+          "Name": "Subtract",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "operation",
+              "Value": "SUBTRACT"
+            },
+            {
+              "IsNull": false,
+              "Name": "x",
+              "Value": "20"
+            },
+            {
+              "IsNull": false,
+              "Name": "y",
+              "Value": "5"
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBody": "15",
+          "ExpectedBodyMatchMode": "NATIVE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        },
+        {
+          "Name": "Sum",
+          "Enabled": true,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "operation",
+              "Value": "SUM"
+            },
+            {
+              "IsNull": false,
+              "Name": "x",
+              "Value": "5"
+            },
+            {
+              "IsNull": false,
+              "Name": "y",
+              "Value": "20"
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBody": "25",
+          "ExpectedBodyMatchMode": "NATIVE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        },
+        {
+          "Name": "multiply",
+          "Description": "Check if multiplication works",
+          "Enabled": false,
+          "ShouldPass": true,
+          "InputParameters": [
+            {
+              "IsNull": false,
+              "Name": "operation",
+              "Value": "MULTIPLY"
+            },
+            {
+              "IsNull": false,
+              "Name": "x",
+              "Value": "4"
+            },
+            {
+              "IsNull": false,
+              "Name": "y",
+              "Value": "5"
+            }
+          ],
+          "ExpectedStatus": "200",
+          "ExpectedHeaders": [],
+          "ExpectedHeadersAllowExtra": true,
+          "ExpectedBody": "20",
+          "ExpectedBodyMatchMode": "NATIVE",
+          "ExpectedArrayOrderedMatching": false,
+          "ExpectedArrayCheckCount": false,
+          "ResponseMatchSchema": true
+        }
+      ],
+      "WrapBodyInObject": false,
+      "Deprecated": false
+    }
+  ],
+  "EndpointGroups": [
+    {
+      "Name": "Simple Calculator",
+      "Description": ""
+    }
+  ],
+  "CustomTypes": [
+    {
+      "Name": "Operation Type",
+      "ImplementationType": "Enumeration",
+      "Description": "Possible operators are sum, subtract, multiply, divide",
+      "Fields": [
+        {
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Deprecated": false,
+          "Name": "SUM",
+          "Description": "Represents the sum operator",
+          "DefaultValue": "SUM"
+        },
+        {
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Deprecated": false,
+          "Name": "SUBTRACT",
+          "Description": "Represents the subtract operator",
+          "DefaultValue": "SUBTRACT"
+        },
+        {
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Deprecated": false,
+          "Name": "MULTIPLY",
+          "Description": "Represents the multiply operator",
+          "DefaultValue": "MULTIPLY"
+        },
+        {
+          "Optional": false,
+          "Type": "String",
+          "Constant": false,
+          "IsStream": false,
+          "IsAttribute": false,
+          "Attributes": {},
+          "Nullable": false,
+          "IsArray": false,
+          "IsMap": false,
+          "Deprecated": false,
+          "Name": "DIVIDE",
+          "Description": "Represents the divide operator",
+          "DefaultValue": "DIVIDE"
+        }
+      ],
+      "Deprecated": false
+    }
+  ],
+  "CodeGenSettings": {
+    "SynchronyMode": "Asynchronous",
+    "ModelSerializationScheme": "Json",
+    "ArraySerialization": "Indexed",
+    "Nullify404": false,
+    "UseHttpMethodPrefix": false,
+    "UseModelPrefix": false,
+    "UseExceptionPrefix": true,
+    "UseEnumPrefix": false,
+    "UseControllerPrefix": false,
+    "UseConstructorsForConfig": true,
+    "Timeout": 0.0,
+    "AndroidUseAppManifest": false,
+    "iOSUseAppInfoPlist": false,
+    "iOSGenerateCoreData": false,
+    "CollapseParamsToArray": false,
+    "RunscopeEnabled": false,
+    "AndroidHttpClient": "UNIREST",
+    "JavaHttpClient": "JAVA_OK",
+    "ObjCHttpClient": "UNIREST",
+    "CSharpHttpClient": "UNIREST",
+    "NodeHttpClient": "NODE_REQUEST",
+    "JavaUsePropertiesConfig": false,
+    "PHPHttpClient": "UNIREST",
+    "EnablePHPComposerVersionString": false,
+    "BrandLabel": "testing",
+    "EnableGlobalUserAgent": true,
+    "EnableAdditionalModelProperties": false,
+    "PreserveParameterOrder": false,
+    "ValidateRequiredParameters": false,
+    "AppendContentHeaders": false,
+    "GenerateInterfaces": false,
+    "UseCommonSDKLibrary": false,
+    "ParameterArrayFormat": "ParamArrayWithIndex",
+    "SecurityProtocols": [
+      "Ssl3",
+      "Tls",
+      "Ssl3",
+      "Tls",
+      "Ssl3",
+      "Tls"
+    ],
+    "GenerateTravisConfig": true,
+    "GenerateCircleConfig": false,
+    "GenerateAppveyorConfig": false,
+    "GenerateJenkinsConfig": false,
+    "EnableLogging": false,
+    "EnableHttpCache": false,
+    "Retries": 0,
+    "RetryInterval": 1.0,
+    "GenerateAdvancedDocs": true,
+    "DisableDocs": false,
+    "StoreTimezoneInformation": false,
+    "UnderscoreNumbers": false,
+    "UseSingletonPattern": true,
+    "IgnoreIfNullJson": false,
+    "DisableLinting": false,
+    "SortResources": false,
+    "LiftParameterDescriptionFromCustomType": false,
+    "AllowSkippingSSLCertVerification": false,
+    "ApplyCustomizations": [],
+    "DoNotSplitWords": [],
+    "ReturnCompleteHttpResponse": false
+  },
+  "Errors": [],
+  "TestGenSettings": {
+    "Configuration": {},
+    "TestTimeout": 30,
+    "PrecisionDelta": 0.01
+  }
+}
