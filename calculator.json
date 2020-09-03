@@ -1,5 +1,5 @@
 {
-  "Name": "APIMATIC Calculator changes",
+  "Name": "APIMATIC Calculator changes hello",
   "BaseUri": "http://examples.apimatic.io/apps/calculator",
   "ServerConfiguration": {
     "DefaultEnvironment": "production",
